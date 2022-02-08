@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+    <script src="https://kit.fontawesome.com/72c5042c53.js"></script>
+    <title>BMI Online</title>
+    
+  </head>
+
+  <body bgcolor="#e0e2e4">
+ <!-- 1 Header Section  -->
+    <header>
+      <div class="container">
+        <a href="/index.html" class="logo">
+          <img src="img/logobmi.png"width="250" height="250" />
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#abt">About us</a></li>
+            <li><a href="#bmi-category">BMI Table</a></li>
+            <li><a href="#count-bmi">Count BMI</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+     <!-- End Header Section  -->
+
+
+ <!-- 2 hero Section  -->
+    <section id="hero" >
+        <div class="hero container">
+          <div>
+            <h1>What is <span></span></h1>
+            <h1>BMI?<span></span></h1>
+            <p>Body mass index (BMI) is a measurement of a person's weight with respect to
+              his or her height. It is more of an indicator than a direct measurement of a 
+              person's total body fat</p>
+            <a href="#count-bmi" type="button" class="cta"><b>Count BMI</b></a>   
+          </div>
+          <div>
+            <img src="https://bmi-online.netlify.com/assets/images/doctors.svg">
+          </div>
+        </div>  
+      </section>
+ <!--End hero Section  -->
+
+      <!-- Count BMI Section  -->
+
+      <section id="count-bmi">
+        <div class="container">
+          <h1>Count Your BMI</h1>
+          <br>
+          <script lang="Javascript">
+            function getCalc()
+            {
+                var height = document.getElementById('height').value;
+                var weight = document.getElementById('weight').value;
+                var result = document.getElementById('result');
+                var bmi;
+    
+                bmi = (weight/(height*height)).toFixed(1);
+    
+                result.textContent = bmi;
+    
+                if(bmi < 18.5){
+                    category = "Underweight 😢";
+                    risk = "Malnutrition Risk";
+                    result.style.color = "#ffc44d";
+                }
+                else if(bmi >= 18.5 && bmi<= 24.9){
+                    category = "Normal Weight 😍";
+                    risk = "Low Risk";
+                    result.style.color = "#0be881";
+                }
+                else if(bmi >= 25 && bmi<= 29.9){
+                    category = "Overweight 😮";
+                    risk = "Enhanced Risk";
+                    result.style.color = "#ff884d";
+                }
+                else if(bmi >= 30 && bmi<= 34.9){
+                    category = "Moderately Obese 😦";
+                    risk = "Medium Risk";
+                    result.style.color = "#ff5e57";
+                }
+                else if(bmi >= 35 && bmi<= 39.9){
+                    category = "Severely Obese 😫";
+                    risk = "Malnutrition Risk";
+                    result.style.color = "#ff554d";
+                }
+                else if(bmi >= 40){
+                    category = "Very Severely Obese 😱";
+                    risk = "Very High Risk";
+                    result.style.color = "	#ff0d00";
+                }
+                document.getElementById("category").textContent = category;
+                document.getElementById("risk").textContent = risk;
+            }
+        </script>
+        <div class="container-count">
+          
+          <h2>BMI Calculator</h2>
+          <div class="container-q">
+              <label>
+                  <input id="height" type="number" placeholder="Enter height in m: ">
+              </label>
+              <label>
+                  <input id="weight" type="number" placeholder="Enter weight in kg: ">
+              </label>
+              <button type="submit" onclick="return getCalc()"><b>Calculate</b></button>
+          </div>
+         
+          <div class="display">
+              <p id="result">BMI</p>
+              <p id="category">Category</p>
+              <p id="risk">Health Risk</p>
+          </div>
+        </div>
+        </div>
+    
+        </section>
+    
+            <!-- Count BMI Section  -->
+  <!--5 BMI table category Section  -->
+  <section id="bmi-category">
+    <div class="container">
+      <h1>BMI Table</h1>
+      <p>
+        BMI is a measure of weight in relation to height. It is the most practical way to 
+        estimate if you are underweight, normal weight, overweight, moderately obese, severely obese or very severely obese.
+        The figure below shows which category your BMI falls into. 
+      </p>
+
+      <br>
+      <br>
+      <!--pic 1-->
+      <div class="card-section">
+        <div class="card">
+          <center>
+          <img src="img/underweight-removebg-preview.png" alt="underweight"width="200px" height="400px">
+        </center>
+          <div class="card-caption">
+            <p class="caption-title">Underweight</p>
+            <p>
+              <dl>
+                  <dt>BMI Range: 18.4 and below </dt>
+                  <dt>Health Risk: Malnutrition risk</dt>
+              </dl>
+          </p>
+          </div>
+        </div>
+
+          <!--pic 2-->
+        <div class="card">
+          <center>
+          <img src="img/normal-removebg-preview (1).png" alt="normalweight" width="200px" height="400px"/>
+        </center>
+          <div class="card-caption">
+            <p class="caption-title">Normal Weight</p>
+            <p>
+              <dl>
+                  <dt>BMI Range: 18.5-24.9 </dt>
+                  <dt>Health Risk: Low risk</dt>
+              </dl>
+          </p>
+          </div>
+        </div>
+
+          <!--pic 3-->
+        <div class="card">
+          <center>
+          <img src="img/overweight-removebg-preview.png" alt="overweight" width="200px" height="400px" />
+          </center>
+          <div class="card-caption">
+            <p class="caption-title">Overweight</p>
+            <p>
+              <dl>
+                  <dt>BMI Range: 25-29.9 </dt>
+                  <dt>Health Risk: Enchanced risk</dt>
+              </dl>
+          </p>
+          </div>
+        </div>
+
+          <!--pic 4-->
+        <div class="card">
+          <center>
+          <img src="img/moderatelyobese-removebg-preview.png" alt="moderateobese" width="200px" height="400px"/>
+          </center>
+          <div class="card-caption">
+            <p class="caption-title">Moderately Obese</p>
+            <p>
+              <dl>
+                  <dt>BMI Range: 30-34.9 </dt>
+                  <dt>Health Risk: Medium risk</dt>
+              </dl>
+          </p>
+          </div>
+        </div>
+
+          <!--pic 5-->
+        <div class="card">
+        <center>
+          <img src="img/severlyobese-removebg-preview.png" alt="severeobese" width="200px" height="400px"/>
+        </center>
+          <div class="card-caption">
+            <p class="caption-title">Severely Obese</p>
+            <p>
+              <dl>
+                  <dt>BMI Range: 35-39.9 </dt>
+                  <dt>Health Risk: Malnutrition risk</dt>
+              </dl>
+          </p>
+          </div>
+        </div>
+
+          <!--pic 6-->
+        <div class="card">
+          <center>  
+          <img src="img/veryseverely_obese-preview (1).png" alt="verysevereobese"width="200px" height="400px" />
+          </center>
+          <div class="card-caption">
+            <p class="caption-title">Very Severely Obese</p>
+            <p>
+              <dl>
+                  <dt>BMI Range: 40 and above</dt>
+                  <dt>Health Risk: Very high risk</dt>
+              </dl>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!--4 End of table bmi Section  -->
+
+    <!--4 video Section  -->
+ <section id="bmi-video">
+  <div class="container">
+      <br>
+    <h1>Does your body mass index (BMI) really matter?</h1>
+    <div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ZHi_A6tC40Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+       allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+<!--End video Section  -->
+
+
+  <!-- about  Section  -->
+  <section id="abt">
+    <div class="container">
+      <h1>Get to know us</h1>
+    <center>
+      <p>
+        BMI calculator launched in December 2021. It is an application used to calculate body mass index instead of calculate it manually using calculator.
+        <br>
+         It allows users to estimate their adult patients' body fat. 
+         <br>
+         The BMI calculator uses Standard or Metric measures and is available in English.
+         <br>
+         This calculator was developed by Wan Nurul Izzah and Nor Hafizah.
+      </p><br><br>
+    </center>
+    <!-- about izzah-->
+  <div class="blog-slider">
+    <div class="blog-slider__wrp swiper-wrapper">
+      <div class="blog-slider__item swiper-slide">
+        <div class="blog-slider__img">
+          <img src="img/wan.jpg" alt="">
+        </div>
+        <div class="blog-slider__content">
+          <span class="blog-slider__code">Web Developer</span>
+          <div class="blog-slider__title"> Wan Nurul Izzah Bt Abd Hadi</div>
+          <p class="blog-slider__code">RCS2514A 2021125795</p>
+          <div class="blog-slider__text"> An experienced website developer specializing in HTML websites
+            and phone applications. Have done numerous projects involving
+            front and back end development.
+            <br>
+            <a href="https://frontenditt588.github.io/BMI-Online-Calculator.com/">Website URL </a>
+           </div>
+        </div>
+      </div>
+  
+      <!-- about pijah-->
+      
+      <div class="blog-slider__item swiper-slide">
+        <div class="blog-slider__img">
+          <img src="img/hfz.png" alt="">
+        </div>
+        <div class="blog-slider__content">
+          <span class="blog-slider__code">Web Developer</span>
+          <div class="blog-slider__title">NorHafizah Bt Ayob</div>
+          <p class="blog-slider__code">RCS2514A 2021119233</p>
+          <div class="blog-slider__text">I am a qualified and professional web developer with experience in database administration and website design. Strong creative and analytical skills. 
+            Team player with an eye for detail. 
+            <br>
+            <a href="https://frontenditt588.github.io/BMI-Online-Calculator.com/">Website URL </a></div>
+        </div>
+      </div>  
+    </div>
+    <div class="blog-slider__pagination"></div>
+  </div>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <br>
+  <br>
+  <br>
+  <br>
+  </section>
+
+   <!-- end about Section  -->
+
+  <!-- footer Section  -->
+<section id="footer">
+   <footer class="footer-distributed">
+
+    <div class="footer-left">
+        <h3>BMI<span>Developer</span></h3>
+
+        <p class="footer-links">
+            <a href="#abt">About us</a>
+            |
+            <a href="#bmi-category">BMI Table</a>
+            |
+            <a href="#count-bmi">Count BMI</a>
+            |
+        </p>
+
+        <p class="footer-company-name">Copyright © 2022 <strong>Wan Nurul Izzah & Nor Hafizah </strong>
+          <br>
+         All rights reserved</p>
+    </div>
+
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p>Universiti Teknologi Mara(UiTM)
+                Arau,Perlis</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>018-2514880 /</p>
+            
+            <p>011-33729831</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p>BMIdeveloper@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>About the company</span>
+            <strong>BMI Developer</strong> is a company where they develop BMI Calculator to calculate your body mass index at your finger's tip.
+        </p>
+        <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+    </div>
+</footer>
+</section>
+  <!-- end footer Section  -->
+  </body>
+</html>
